@@ -1,652 +1,827 @@
-<!-- Hayo Ngapain?:v -->
-<!-- Credit Template By ArYan -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>𝐀𝐑𝐘𝐀𝐍 𝐀𝐏𝐈</title>
-    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="vendors/owl-carousel-2/owl.carousel.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="vendors/owl-carousel-2/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Wk6KnE7aJHUHjpp_wBoDfkeSIOQfSGMmxg&usqp=CAU"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Wk6KnE7aJHUHjpp_wBoDfkeSIOQfSGMmxg&usqp=CAU"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
-    <script src="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
-   <meta name="description" content="ArYan - API">
-   <meta property="og:image" content="https://i.imgur.com/NNZC1Z7.jpeg">
-   <meta property="og:site_name" content="EKA PI">
-   <meta name="keywords" content="REST API">
-   <meta name="author" content="ArYan 🐔">
-  </head>
-  <body>
-  <body id="page-top" onload="getvisitor();">
-    <div class="container-scroller">
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo rounded-circle" href="#"><img src="images/logo1.png" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="#"><img src="images/logo1.png" class="rounded-circle" alt="logo" /></a>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="android-chrome" sizes="512x512" href="https://upanh.cf/s09p7vy0bj.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="hhttps://upanh.cf/s09p7vy0bj.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/YWPMn9p/457424104-500471186181986-4528361655080586165-n-jpg-stp-dst-jpg-s480x480-nc-cat-105-ccb-1-7-nc-sid-9.jpg">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        html {
+          font-size: 62.5%;
+          line-height: 1.625rem;
+          height: 100%;
+          scroll-behavior: smooth;
+        }
+
+        :root {
+          --messenger-color: #168AFF;
+          --green-color: #25D366;
+          --white-color: #fff;
+          --bg-main: #e3edf7;
+          --bg-dark: #303234;
+          --primary-color: #31344b;
+          --text-color: #777777;
+          --text-color-dark: #b0b3b8;
+          --blue-color: #1877f2;
+          --blue-color-2: #e9f5ff;
+          --outer-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+            -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+          --outer-shadow-o: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+            -6px -6px 10px -1px rgba(255, 255, 255, 0.7),
+            inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+            inset -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+          --outer-shadow-dark: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+            -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
+          --outer-shadow-dark-o: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+            -6px -6px 10px -1px rgba(255, 255, 255, 0.1),
+            inset 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+            inset -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
+          --icon-fb: #4267b2;
+          --icon-insta: #fb3958;
+          --icon-github: #333;
+          --icon-youtube: #ff0000;
+          --icon-linkedIn: #0e76a8;
+        }
+
+        .app {
+          width: 100%;
+          height: 100vh;
+          background-attachment: fixed;
+          background: var(--bg-main);
+          transition: all 0.3s linear;
+          -moz-transition: all 0.3s linear;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+        }
+        .app.dark {
+          background: var(--bg-dark);
+        }
+
+        .card {
+          position: fixed;
+          max-width: 350px;
+          height: 380px;
+          display: flex;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 20px 12px;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          background: var(--white-color);
+          border-radius: 7px;
+          background: var(--bg-main);
+          box-shadow: var(--outer-shadow);
+          transition: all 0.3s linear;
+          -moz-transition: all 0.3s linear;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+        }
+
+        .app.dark .card::after {
+          transform: scale(1.01);
+          border-radius: 7px;
+        }
+        .app.dark .card {
+          background: var(--bg-dark);
+          box-shadow: var(--outer-shadow-dark);
+        }
+        .card__title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .card__title--img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          box-shadow: var(--outer-shadow);
+          border: 5px solid var(--bg-main);
+          transition: all 0.3s linear;
+          -moz-transition: all 0.3s linear;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+        }
+
+        .app.dark .card__title--img {
+          border: 5px solid var(--bg-dark);
+          box-shadow: var(--outer-shadow-dark);
+        }
+        .card__title--img img {
+          width: 100%;
+          height: 100%;
+          border: 2px solid transparent;
+          border-radius: 50%;
+          animation: colorBorder 5s infinite linear alternate;
+          object-fit: cover;
+        }
+        .card__title--name {
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-top: 10px;
+        }
+        .card__title--name h1 {
+          position: relative;
+          color: var(--primary-color);
+          font-size: 2.2rem;
+          font-weight: 600;
+          line-height: 2.2rem;
+          text-align: center;
+        }
+        .app.dark .card__title--name h1 {
+          color: var(--white-color);
+        }
+        .card__title--name .veri__check {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          left: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          color: var(--white-color);
+          background: var(--blue-color);
+          border: 2px solid var(--white-color);
+          text-align: center;
+          border-radius: 50%;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+        .veri__check .fas {
+          line-height: 18px;
+          font-size: 1.1rem;
+        }
+        .card__title--description {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+        }
+
+        .card__title--description p {
+          position: relative;
+          text-align: center;
+          font-size: 1.8rem;
+          font-weight: 400;
+          color: var(--text-color);
+          line-height: 1.8rem;
+        }
+
+        .app.dark .card__title--description p {
+          color: var(--text-color-dark);
+        }
+        .mt-10 {
+          margin-top: 10px;
+        }
+        .mb-10 {
+          margin-bottom: 10px;
+        }
+
+        .card__body {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .row {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: -5px;
+          margin-right: -5px;
+          justify-content: center;
+        }
+        .col {
+          width: 100%;
+          position: relative;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .col-lg-3 {
+          display: flex;
+          justify-content: center;
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+        .card__item {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid var(--bg-main);
+          width: 50px;
+          height: 50px;
+          background: var(--bg-main);
+          box-shadow: var(--outer-shadow);
+          border-radius: 50%;
+          animation: colorBorder 5s infinite linear alternate;
+          transition: all 0.3s ease 0s;
+          -moz-transition: all 0.3s ease 0s;
+          -webkit-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        .app.dark .card__item {
+          background: var(--bg-dark);
+          box-shadow: var(--outer-shadow-dark);
+          border: 2px solid var(--bg-dark);
+        }
+
+        .card__item:hover {
+          box-shadow: var(--outer-shadow-dark-o);
+        }
+
+        .app.dark .card__item:hover {
+          box-shadow: var(--outer-shadow-dark-o);
+        }
+
+        .card__link {
+          position: relative;
+          text-decoration: none;
+        }
+
+        .link__icon {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          color: var(--blue-color);
+        }
+
+        .link__icon .fab {
+          font-size: 2.5rem;
+        }
+        .link_docs_icon {
+            color: var(--bg-dark);
+            background-color: var(--bg-main);
+            box-shadow: var(--outer-shadow-dark);
+            box-sizing: border-box;
+            display: flex;
+            position: relative;
+            padding: 2px 4px;
+            margin-top: 18px;
+            margin: 2;
+            margin-bottom: 1px;
+            height: auto;
+            width: auto;
+            text-align: center;
+            overflow: auto;
+        }
+        .link_docs_icon .link_docs_text {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            line-height: 2.2rem;
+            cursor: pointer;
+            font-size: 18px;
+            color: #000000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            border: 2px solid transparent;
+            border-radius: 6px;
+            animation: colorBorder 5s infinite linear alternate;
+            background-color: var(--bg-main);
+        }
+        .app.dark .link_docs_icon .link_docs_text {
+            color: var(--bg-main);
+            background-color: var(--bg-dark);
+        }
+        .app.dark .link_docs_icon {
+            color: var(--bg-main);
+            background-color: var(--bg-dark);
+        }
+        .link__icon .fa-whatsapp {
+          color: var(--green-color);
+        }
+        .link__icon .fa-facebook-messenger {
+          color: var(--messenger-color);
+            }
+
+        .link__icon .fa-github {
+          color: var(--icon-github);
+        }
+        .app.dark .link__icon .fa-github {
+          color: var(--bg-main);
+        }
+        .link__icon .fa-instagram {
+          background: radial-gradient(
+            circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 70%,
+            #285aeb 90%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .link__icon .fa-whatsapp {
+          color: var(--green-color);
+        }
+
+        .toggle {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: "";
+          width: 35px;
+          height: 35px;
+          top: 20px;
+          border-radius: 50%;
+          color: var(--primary-color);
+          box-shadow: var(--outer-shadow);
+          border: 2px solid var(--bg-main);
+          cursor: pointer;
+          transition: all 0.3s linear;
+          -moz-transition: all 0.3s linear;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+          animation: colorBorder 5s infinite linear alternate;
+        }
+        .toggle__theme {
+          right: 20px;
+        }
+
+        .app.dark .toggle {
+          color: var(--bg-main);
+          border: 2px solid var(--bg-dark);
+        }
+        .toggle__theme:hover,
+        .toggle__back:hover {
+          box-shadow: var(--outer-shadow-o);
+        }
+
+        .app.dark .toggle__theme,
+        .app.dark .toggle__back {
+          box-shadow: var(--outer-shadow-dark);
+        }
+
+        .app.dark .toggle__theme:hover,
+        .app.dark .toggle__back:hover {
+          box-shadow: var(--outer-shadow-dark-o);
+        }
+
+        .toggle__theme .fas,
+        .toggle__back .fas {
+          font-size: 2rem;
+        }
+        .toggle__back {
+          left: 20px;
+        }
+
+        .button__list {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .button {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 15px 20px;
+          text-align: center;
+          background: var(--bg-main);
+          box-shadow: var(--outer-shadow);
+          color: var(--text-color);
+          border: 2px solid var(--bg-main);
+          font-size: 1.8rem;
+          font-weight: 400;
+          border-radius: 7px;
+          transition: all 0.3s linear;
+          -moz-transition: all 0.3s linear;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+          cursor: pointer;
+        }
+
+        .app.dark .button {
+          background: var(--bg-dark);
+          box-shadow: var(--outer-shadow-dark);
+          color: var(--text-color-dark);
+          border: 2px solid var(--bg-dark);
+        }
+        .button:hover {
+          box-shadow: var(--outer-shadow-o);
+          color: var(--blue-color) !important;
+        }
+        .app.dark .button:hover {
+          box-shadow: var(--outer-shadow-dark-o);
+        }
+        .col-lg-6 {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        .card__footer {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          justify-content: center;
+          width: 100%;
+        }
+        .card__footer .footer__item {
+          flex: 0 0 33.33333%;
+          max-width: 33.33333%;
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+        .card__footer .footer__item:nth-child(1),
+        .card__footer .footer__item:nth-child(2) {
+          border-right: 1.5px solid var(--text-color);
+        }
+        .footer__item span {
+          font-size: 1.8rem;
+          color: var(--text-color);
+          transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+        }
+        .app.dark .footer__item span {
+          color: var(--text-color-dark);
+        }
+        .card__footer .footer__item:nth-child(1):hover span,
+        .card__footer .footer__item:nth-child(2):hover span,
+        .card__footer .footer__item:nth-child(3):hover span {
+          color: var(--blue-color);
+        }
+
+        .footer__item span .fa,
+        .footer__item span .fas {
+          margin-right: 5px;
+        }
+        .toast {
+          position: fixed;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          max-width: 280px;
+          height: fit-content;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          margin: auto;
+          padding: 10px;
+          border-radius: 7px;
+          background: var(--bg-main);
+          box-shadow: var(--outer-shadow);
+          z-index: 999;
+          transform: translateX(calc(300% + 280px));
+          animation: slideToLeft ease 0.3s;
+          will-change: opacity, transform;
+        }
+        @keyframes slideToLeft {
+          from {
+            transform: translateX(calc(300% + 280px));
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeOut {
+          to {
+            opacity: 1;
+          }
+        }
+        .toast .toast__icon {
+          width: 38px;
+          height: 38px;
+          background: var(--white-color);
+          border-radius: 50%;
+        }
+        .toast .toast__icon .fas {
+          font-size: 3.2rem;
+          line-height: 39px;
+        }
+        .toast.success .toast__icon .fas {
+          color: rgb(4, 248, 4);
+        }
+        .toast.warning .toast__icon .fas {
+          color: var(--icon-youtube);
+        }
+        .toast .toast__body .toast__body--title {
+          font-size: 2.2rem;
+          line-height: 2.2rem;
+          font-weight: 500;
+          color: rgb(4, 248, 4);
+        }
+        .toast .toast__body .toast__body--description {
+          font-size: 1.8rem;
+          line-height: 2.2rem;
+          font-weight: 400;
+          color: var(--text-color);
+        }
+        .toast .toast__close {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          background: var(--bg-main);
+          color: var(--text-color);
+          border-radius: 7px;
+          box-shadow: var(--outer-shadow);
+          cursor: pointer;
+        }
+        .toast .toast__close:hover {
+          box-shadow: var(--outer-shadow-o);
+        }
+        .toast .toast__close .fas {
+          font-size: 1.6rem;
+          font-weight: 600;
+        }
+        .toast .toast__close span {
+          margin-left: 5px;
+          font-size: 1.8rem;
+          font-weight: 500;
+        }
+        @media screen and (max-width: 370px) {
+          .mg-10 {
+            margin: auto 10px;
+          }
+        }
+        @keyframes cursor {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        @keyframes colorBorder {
+            0% {
+                border-color: #ff79c6;
+            }
+            25% {
+                border-color: #8be9fd;
+            }
+            50% {
+                border-color: #50fa7b;
+            }
+            75% {
+                border-color: #ffb86c;
+            }
+            100% {
+                border-color: #bd93f9;
+            }
+        }
+        </style>
+    <title> 𝐁𝐀𝐘𝐉𝐈𝐃 6𝐓9 </title>
+</head>
+
+<body>
+    <div class="app">
+        <div class="card mg-10">
+            <div class="card__title">
+                <div class="card__title--img">
+                    <img src="https://i.imgur.com/4I3ze7y.jpeg" alt="">
+                </div>
+                <div class="card__title--name">
+                    <h1>𝐁𝐀𝐘𝐉𝐈𝐃 6𝐓9 </h1>
+                    <div class="veri__check">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <div class="card__title--description">
+                    <p></br>⩸ ⁓ MY STORY IN A FRAME ⁓ ⩸ 
+                </br>👦🕊 </br></p>
+                </div>
+            </div>
+            <div class="card__body mt-10">
+                <div class="row">
+                    <div class="col col-lg-3 mt-10">
+                        <div class="card__item">
+                            <a href="https://www.facebook.com/BAYJID.404" class="card__link">
+                                <div class="link__icon">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                  <div class="col col-lg-3 mt-10">
+                      <div class="card__item">
+                          <a href="https://github.com/BAYJID404" class="card__link">
+                              <div class="link__icon">
+                                  <i class="fab fa-github"></i>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                    <div class="col col-lg-3 mt-10">
+                        <div class="card__item">
+                            <a href="https://wa.me/+8801638007072" class="card__link">
+                                <div class="link__icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 mt-10">
+                        <div class="card__item">
+                            <a href="https://www.instagram.com/mr_bayjid120" class="card__link">
+                                <div class="link__icon">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                        <div class="link_docs_icon">
+                            <a href="/docs" class="card__link">
+                                <div class="link_docs_text">API DOCS</div>
+                            </a>
+                    </div>
+
+                    <div class="link_docs_icon">
+                      <a href="/api-docs" class="card__link">
+                          <div class="link_docs_text">API DOCS-V2</div>
+                      </a>
+              </div>
+
+                </div>
+            </div>
+
+            <div class="toggle toggle__back">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="toggle toggle__theme">
+                <i class="fas fa-moon"></i>
+            </div>
+
+            <div class="card__footer mt-10">
+                <div class="footer__item">
+                    <title>
+                        <i class="fas fa-heart"></i>
+                        4.5M
+                    </title>
+                </div>
+                <div class="footer__item">
+                    <title>
+                        <i class="fa fa-comment"></i>
+                        1.7M
+                    </title>
+                </div>
+                <div class="footer__item">
+                    <title>
+                        <i class="fa fa-share"></i>
+                        2.2M
+
+                    </title>
+                </div>
+            </div>
         </div>
-       <font face="Original Surfer">
-        <ul class="nav">
-          <li class="nav-item profile">
-            <div class="profile-desc">
-              <div class="profile-pic">
-                <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="https://i.imgur.com/NNZC1Z7.jpeg" alt="">
-                  <span class="count bg-success"></span>
-                </div>
-                <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Zeeone Ofc</h5>
-                  <span>Masih Pemula Om :(</span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Docs</span>
-          </li>
-          <li class="nav-item menu-items">
-          <a class="nav-link" href="#">
-          <span class="menu-icon">
-          <i class="mdi mdi-home"></i>
-          </span>
-          <span class="menu-title">Home</span>
-          </a>
-          </li>
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-cecan" aria-expanded="false" aria-controls="ui-img-maker">
-          <span class="menu-icon">
-          <i class="mdi mdi-folder-multiple-image"></i>
-          </span>
-          <span class="menu-title">Cecan API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-cecan">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/china?apikey=Alphabot">China</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/vietnam?apikey=Alphabot">Vietnam</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/thailand?apikey=Alphabot">Thailand </a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/indonesia?apikey=Alphabot">Indonesia</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/korea?apikey=Alphabot">Korea</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/japan?apikey=Alphabot">Japan</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/cecan/malaysia?apikey=Alphabot">Malaysia</a></li>
-          </ul>
-          </div>
-          </li> 
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-asupan" aria-expanded="false" aria-controls="ui-stalker">
-          <span class="menu-icon">
-          <i class="mdi mdi-chart-bar"></i>
-          </span>
-          <span class="menu-title">Asupan API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-asupan">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/cecan?apikey=Alphabot">Cecan</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/hijaber?apikey=Alphabot">Hijaber</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/asupan?apikey=Alphabot">Asupan </a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/rikagusriani?apikey=Alphabot">Rikagusriani</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/santuy?apikey=Alphabot">Santuy</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/ukhty?apikey=Alphabot">Ukhty</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/asupan/bocil?apikey=Alphabot">Bocil</a></li>          
-	     <li class="nav-item"> <a class="nav-link" href="api/asupan/gheayubi?apikey=Alphabot">Gheayubi</a></li>          
-</ul>
-          </div>
-          </li>                    
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-downloader" aria-expanded="false" aria-controls="ui-downloader">
-          <span class="menu-icon">
-          <i class="mdi mdi-download"></i>
-          </span>
-          <span class="menu-title">Downloader API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-downloader">
-          <ul class="nav flex-column sub-menu">
-         <li class="nav-item"> <a class="nav-link"href="api/download/tiktok?url=https://vt.tiktok.com/ZSekUmEmL/&apikey=Alphabot">Tiktok Downloader</a></li>
-         <li class="nav-item"> <a class="nav-link"href="api/download/facebook?url=URL&apikey=Alphabot">Facebook Downloader</a></li>
-         <li class="nav-item"> <a class="nav-link"href="api/download/instagram?apikey=Alphabot&url=https://www.instagram.com/p/CVl3U2Sv1Yv/?utm_medium=copy_link">Instagram Downloader</a></li>
-         <li class="nav-item"> <a class="nav-link"href="api/download/pinterest?q=loli&apikey=Alphabot">Tiktok Downloader</a></li>
-         <li class="nav-item"> <a class="nav-link"href="api/download/ytmp3?url=https://youtu.be/-iJ3JAIh4w0&apikey=Alphabot">YouTube Audio</a></li>
-		<li class="nav-item"> <a class="nav-link"href="api/download/ytsearch?query=cara membuat bot&apikey=Alphabot">Youtube Search</a></li>
-         <li class="nav-item"> <a class="nav-link"href="api/download/ytmp4?url=https://youtu.be/-iJ3JAIh4w0&apikey=Alphabot">YouTube Video</a></li>          
-          </ul>
-          </div>
-          </li>
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-lk" aria-expanded="false" aria-controls="ui-textpro">
-          <span class="menu-icon">
-          <i class="mdi mdi-lock"></i>
-          </span>
-          <span class="menu-title">Lk21 API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-lk">
-          <ul class="nav flex-column sub-menu">          
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/search?film=spiderman&apikey=Alphabot"> Lk21 Search</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/terbaru?apikey=Alphabot">Lk21 Terbaru</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/comingsoon?apikey=Alphabot">Lk21 Coming Soon</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/tvseries?apikey=Alphabot">Lk21 Tvseries</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/year?tahun=2019&apikey=Alphabot">Lk21 Year</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/country?country=Inggris&apikey=Alphabot">Lk21 Country</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/lk21/genre?tipe=action&apikey=Alphabot">Lk21 Genre</a></li>
-			</ul>
-          </div>
-          </li>  
-<li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-film" aria-expanded="false" aria-controls="ui-stalker">
-          <span class="menu-icon">
-          <i class="mdi mdi-chart-bar"></i>
-          </span>
-          <span class="menu-title">FilmApik API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-film">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="api/filmapik/search?film=spiderman&apikey=Alphabot">Search</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/filmapik/kategori?fipm=spiderman&apikey=Alphabot">Kategori</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/filmapik/play?id=928171&apikey=Alphabot">FilmApik Play </a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/filmapik/terbaru?apikey=Alphabot">Film Apik Terbaru</a></li>
-</ul>
-          </div>
-          </li>     
-<li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-news" aria-expanded="false" aria-controls="ui-random">
-          <span class="menu-icon">
-          <i class="mdi mdi-xing"></i>
-          </span>
-          <span class="menu-title">News API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-news">
-          <ul class="nav flex-column sub-menu">
-         <li class="nav-item"> <a class="nav-link" href="api/news/cnn?type=Berita&apikey=Alphabot">Cnn News</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/news/cnbc?type=Berita&apikey=Alphabot">CnBc News</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/news/republika?type=Berita&apikey=Alphabot">Republika News</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/news/tempo?type=Berita&apikey=Alphabot">Tempo News</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/news/antara?type=Berita&apikey=Alphabot">Antara News</a
-          <li class="nav-item"> <a class="nav-link" href="api/news/kumparan?type=Berita&apikey=Alphabot">Kumparan News</a></li>
-          </ul>
-          </div>
-          </li>    
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-photooxy" aria-expanded="false" aria-controls="ui-photooxy">
-          <span class="menu-icon">
-          <i class="mdi mdi-folder-image"></i>
-          </span>
-          <span class="menu-title">Photooxy API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-photooxy">
-          <ul class="nav flex-column sub-menu">
-         
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/grafity_text?text=zeeone&apikey=Alphabot">Grafity Text</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/naruto?text=zeeone&apikey=Alphabot">Naruto </a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/petterns?apikey=Alphabot&text=zeeone">Petterns</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/text_on_cup?text=zeeoneofc&apikey=Alphabot">Text On Cup</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/3d_summer?text=zeeone&apikey=Alphabot">3d Summer</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/3d_nature?text=zeeone&apikey=Alphabot">3d Summer</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/wolf_metal?text=zeeone&apikey=Alphabot">Wolf Metal</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/wood_heart?text=zeeone&apikey=Alphabot">Wood Heart</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/flower_heart?text=zeeone&apikey=Alphabot">Flower Heart</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/wooden_board?text=alpha&apikey=Alphabot">Wooden Board</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/tiktok_effect?text=zeeone&text2=ofc&apikey=Alphabot">Tiktok</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/double_heart?text=zeeone&apikey=Alphabot">Double Heart</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/coffee_cup?text=alpha&apikey=Alphabot">Coffe Cup</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/under_grass?text=zeeone&apikey=Alphabot">Under Grass</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/text_on_cup2?text=zeeone&apikey=Alphabot">Text On Cup 2</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/romantic_text?text=zeeone&apikey=Alphabot">Romantic Text</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/burn_paper?text=zeeone&apikey=Alphabot">Burn Paper</a>
-         <li class="nav-item"> <a class="nav-link" href="api/photooxy/shadow_text?text=alpha&apikey=Alphabot">Shadow</a>
-          </ul>
-          </div>
-          </li>
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-search" aria-expanded="false" aria-controls="ui-fun">
-          <span class="menu-icon">
-          <i class="mdi mdi-emoticon-happy"></i>
-          </span>
-          <span class="menu-title">Search API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-search">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="/api/search/joox?query=saranghae&apikey=Alphabot">Joox</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/search/wallpaper?query=anime&apikey=Alphabot">Wallpaper</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/search/wattpad?query=dilan&apikey=Alphabot">Wattpad</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/search/komiku?query=naruto&apikey=Alphabot">Komiku</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/search/otaku?query=naruto&apikey=Alphabot">Otaku</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/search/anime?query=naruto&jumlah=5&apikey=Alphabot">Anime</a></li>
-          </ul>
-          </div>
-          </li>    
-<li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-anime" aria-expanded="false" aria-controls="ui-anime">
-          <span class="menu-icon">
-          <i class="mdi mdi-cat"></i>
-          </span>
-          <span class="menu-title">Anime & Manga API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-anime">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="api/anime/searchanime?query=naruto&apikey=APIKEY">Search Anime</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/anime/samehadaku_genre?genre=sad&apikey=APIKEY">Samehadaku Genre</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/anime/samehadaku_page?page=183&apikey=Alphabot">Samehadaku Page</a></li>
-</ul>
-          </div>
-          </li>
-<li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-nsfw" aria-expanded="false" aria-controls="ui-tools">
-          <span class="menu-icon">
-          <i class="mdi mdi-wrench"></i>
-          </span>
-          <span class="menu-title">Nsfw API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-nsfw">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/ass?apikey=Alphabot">Ass</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/ahegao?apikey=Alphabot">Ahegao</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/bdsm?apikey=Alphabot">Bdsm</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/blowjob?apikey=Alphabot">Blowjob</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/cuckold?&apikey=Alphabot">CuckOld</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/cum?apikey=Alphabot">Cum</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/ero?apikey=Alphabot">Ero</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/femdom?apikey=Alphabot">Femdom</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/foot?apikey=Alphabot">Foot</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/gangbang?apikey=Alphabot">Gangbang</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/glasses?&apikey=Alphabot">Glasses</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/hentai?apikey=Alphabot">Hentai</a></li>
-           <li class="nav-item"> <a class="nav-link" href="api/nsfw/hentaigif?apikey=Alphabot">Hantai Gif</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/jahy?apikey=Alphabot">Jahy</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/masturbation?apikey=Alphabot">Masturbation</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/neko?apikey=Alphabot">Neko</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/orgy?&apikey=Alphabot">Orgy</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/panties?apikey=Alphabot">Panties</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/pussy?apikey=Alphabot">Pussy</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/thighs?apikey=Alphabot">Thighs</a></li>
-          <li class="nav-item"> <a class="nav-link" href="api/nsfw/yuri?&apikey=Alphabot">Yuri</a></li>          
-          </ul>
-          </div>
-          </li>          
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-islamic" aria-expanded="false" aria-controls="ui-islamic">
-          <span class="menu-icon">
-          <i class="mdi mdi-star"></i>
-          </span>
-          <span class="menu-title">Islamic API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-islamic">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link"href="api/islam/tahlil?apikey=Alphabot">Tahlil</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/wirid?apikey=Alphabot">Wirid</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/ayatkursi?apikey=Alphabot">Ayat Kursi</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/doaharian?apikey=Alphabot">Doa Harian</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/bacaanshalat?apikey=Alphabot">Bacaan Shalat</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/niatshalat?apikey=Alphabot">Niat Shalat</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/kisahnabi?apikey=Alphabot">Kisah Nabi</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/asmaulhusna?apikey=Alphabot">Asmaul Husna</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/niatsubuh?apikey=Alphabot">Niat Subuh</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/niatzuhur?apikey=Alphabot">Nist Zuhur</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/niatmagrib?apikey=Alphabot">Niat Magrib</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/niatisya?apikey=Alphabot">Niat Isya</a></li>
-          <li class="nav-item"> <a class="nav-link"href="api/islam/niatashar?apikey=Alphabot">Nist Ashar</a></li>
- </ul>
-          </div>
-          </li>          
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-game" aria-expanded="false" aria-controls="ui-anime">
-          <span class="menu-icon">
-          <i class="mdi mdi-cat"></i>
-          </span>
-          <span class="menu-title">Game API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-gane">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="api/game/tebakgambar?apikey=APIKEY">Tebak Gambar </a></li>
-          </ul>
-          </div>
-          </li>
-          <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-oth" aria-expanded="false" aria-controls="ui-fun">
-          <span class="menu-icon">
-          <i class="mdi mdi-emoticon-happy"></i>
-          </span>
-          <span class="menu-title">Other API</span>
-          <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-oth">
-          <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="/api/other/ghstalk?username=zeeoneofc&apikey=Alphabot">Github Stalk</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/repostalk?username=zeeoneofc&apikey=Alphabot">Repositori Stalk</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/hilih?kata=hehe&apikey=Alphabot">Hilih</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/fakedata?country=china&apikey=Alphabot">Fakedata</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/drakorasi?search=i love u&apikey=Alphabot">Drakor Asia</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/translate?kata=pagi&apikey=Alphabot">Translate</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/infotsunami?apikey=Alphabot">Info Tsunami</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/infocuacadunia?apikey=Alphabot">Cuaca Dunia</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/cuacabandara?apikey=Alphabot">Cuaca Bandara</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/kodepos?kota=Jakarta&apikey=Alphabot">Kodepos</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/coviddunia?apikey=Alphabot">Covid Global</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/api/other/covidindo?apikey=Alphabot">Covid Indonesia</a></li>
-           <li class="nav-item"> <a class="nav-link" href="/api/other/kbbi?kata=bahasa&apikey=Alphabot">Kbbi</a></li>
-          </ul>
-          </div>
-          </li>    
-          <li class="nav-item nav-category">
-          <span class="nav-link">Contact Me</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="https://github.com/zeeoneofc">
-              <span class="menu-icon">
-                <i class="mdi mdi-github-circle"></i>
-              </span>
-              <span class="menu-title">Github</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="https://wa.me/62887435047326">
-              <span class="menu-icon">
-                <i class="mdi mdi-whatsapp"></i>
-              </span>
-              <span class="menu-title">WhatsApp</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="https://saweria.co/zeeoneofc">
-              <span class="menu-icon">
-                <i class="mdi mdi-saweria"></i>
-              </span>
-              <span class="menu-title">Donasi</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="https://instagram.com/zeeoneofc">
-              <span class="menu-icon">
-                <i class="mdi mdi-instagram"></i>
-              </span>
-              <span class="menu-title">Instagram</span>
-            </a>
-          </li>
-        </ul>
-       </font>
-      </nav>
-      <div class="container-fluid page-body-wrapper">
-        <nav class="navbar p-0 fixed-top d-flex flex-row">
-          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><big><i class="mdi mdi-biohazard text-primary"></i></big></a>
-          </div>
-          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-              <span class="mdi mdi-menu"></span>
-            </button>
-            <ul class="navbar-nav w-100">
-              <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex ">
-                  <input type="text" class="form-control" placeholder="Alphabot APIs">
-                </form>
-              </li>
-            </ul>
-            <ul class="navbar-nav navbar-nav-right">
-              <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
-                  <i class="mdi mdi-view-grid"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                  <i class="mdi mdi-bell"></i>
-                  <span class="count bg-danger"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                  <h6 class="p-3 mb-0">Info New Update</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Change Template</p>
-                      <p class="text-muted ellipsis mb-0"> Cuman Minta Template doang bang :v </p>
-                    </div>
-                  </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                  <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="https://i.imgur.com/GOYkuQt.jpeg" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">ZeeoneOfc</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-              <span class="mdi mdi-format-line-spacing"></span>
-            </button>
-          </div>
-        </nav>
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="font-weight-bold text-danger text-uppercase">IP Address</h5>
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0" id="ip">Waiting...</h3>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success">
-                          <span class="mdi mdi-access-point-network icon-item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <font face="Original Surfer" class="text-muted font-weight-normal">ArYan IP Address</font>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h6 class="font-weight-bold text-info text-uppercase">ArYan Battery</h6>
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                        	<span id="batteryLevel"></span>
-                          <h3 class="mb-0" id="percentageLevel">Waiting...</h3>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success ">
-                          <span class="mdi mdi-battery-positive"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <font face="Original Surfer" class="text-muted font-weight-normal">Percentase Your Battery</font>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="font-weight-bold text-success text-uppercase">Visitor</h5>
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0" id="visits">Waiting...</h3>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success ">
-                          <span class="mdi mdi-eye icon-item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <font face="Original Surfer" class="text-muted font-weight-normal">Visit Web</font>
-                  </div>
-                </div>
-              </div>
-            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="font-weight-bold text-info text-uppercase">Date</h5>
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                          <h4 class="mb-0" id="tanggal">Waiting...</h4>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success ">
-                          <span class="mdi mdi-calendar icon-item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <font face="Original Surfer" class="text-muted font-weight-normal">Date Now</font>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="font-weight-bold text-success text-uppercase">Clock</h5>
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                          <h4 class="mb-0" id="Clock">Waiting...</h4>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success ">
-                          <span class="mdi mdi-clock icon-item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <font face="Original Surfer" class="text-muted font-weight-normal" id="Ucapan">Ucapan</font>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h6 class="font-weight-bold text-info text-uppercase">ArYan</h6>
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                          <h5 class="mb-0" id="IdulAdha">Waiting...</h5>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success ">
-                          <span class="mdi mdi-star icon-item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <font face="Original Surfer" class="text-muted font-weight-normal">ArYan</font>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <form action="/api/cekapikey">
-              <div class="card card-round mt-5 stretch-card grid-margin">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h4 class="m-0 font-weight-bold text-warning"><i <h4>CEK APIKEY</h4>
-                </div>
-               <div class="card-body">
-                 <p class="status" style="font-size: 17px;"></p>
-                   <div class="form-group">
-                     <input class="form-control font-weight-bold text-center" type="text" placeholder="Masukkan Apikey" name="apikey" required>
-                   </div>
-                   <div class="form-group"><center>
-                     <button type="submit" class="btn btn-primary content-justify-center"><i class="mdi mdi-arrow-right-bold-hexagon-outline"></i> <span class="font-weight-bold"> Submit</span></button></center>
-                   </div>
-               </div>
-             </div>
-            </form>
-<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-5404310597803049" data-ad-slot="6657550061"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-            <div class="row">
-              <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="mt-3 btn btn-outline-danger bg-transparent">
-                    <div id="demo" class="alert btn btn-outline-danger" role="alert">
-                      <span id="Statistic">Waiting...</span>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-              <div class="card-body">
-              <img src="https://i.top4top.io/p_1970vakjn1.jpg" alt="Ojan Ganz" class="logo img-fluid rounded mx-auto d-block mb-4"/>
-              <h6 class="m-0 font-weight-bold text-primary">Information</h6>
-              <h6><br>
-              Rest Api Ini Free, Silahakan di pake dengan bijak. <br><br>Apikey Nya? <font color="red">Alphabot</font>
-              <br> Jika menemukan bug gk usah lapor <a href="https://wa.me/62887435047326"> Owner</a></font>
-              </div>
-              <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-              <h4 class="card-title">FITUR LAINNYA</h4>
-              <div class="template-demo">
-              <button type="button" id="sbs" class="btn btn-dark btn-lg btn-block" onclick="githubstalk()">GITHUB STALK</button>
-              <button type="button" id="sbs" class="btn btn-dark btn-lg btn-block" onclick="jadwal()">JADWAL SHOLAT</button>
-              <button type="button" id="sbs" class="btn btn-dark btn-lg btn-block" onclick="hilihgen()">HILIH GENERATOR</button>
-              </div>
-              </div>
-              </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <div class="bg-dark btn btn-block btn-outline-danger">
-                <font face="Original Surfer" class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © <span id="Years">00</span> ZeeoneOfc</font>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </div>
-    </div>
     <script>
-      swal({
-        title: 'Welcome To Rest ArYan api',
-        text: 'ArYan error fix api',
-        imageUrl: 'https://i.imgur.com/GOYkuQt.jpeg',
-        imageWidth: 200,
-        imageHeight: 200,
-        imageAlt: 'Danu',
-        animation: true
-      })
+        const toggle = document.querySelector(".toggle__theme");
+        const card = document.querySelector(".app");
+        toggle.addEventListener("click", () => {
+            let theme = toggle.querySelector(".fas");
+            if (theme.classList.contains("fa-moon")) {
+                theme.classList.remove("fa-moon");
+                theme.classList.add("fa-sun");
+                card.classList.add("dark");
+            } else {
+
+                theme.classList.remove("fa-sun");
+                theme.classList.add("fa-moon");
+                card.classList.remove("dark");
+
+            }
+        })
     </script>
-			<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>   
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="vendors/owl-carousel-2/owl.carousel.min.js"></script>
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/misc.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/ojan.js"></script>
-                                                                                                                                           </html>
+</style>
+<style>
+  html,body{cursor:url("https://i.imgur.com/D7ut0CJ.jpg"), auto;}
+  a:hover{cursor:url("http://www.rw-designer.com/cursor-view/162862.png"), auto;}
+</style>
+</head>
+<script type='text/javascript'>
+/*<![CDATA[*/
+// Số bông tuyết (Không khuyến khích nhiều hơn 30-40)
+var snowmax=40
+// Tùy chọn màu sắc cho tuyết, có thể nhiều màu khác nhau như bên dưới
+var snowcolor=new Array("#aaaacc","#ddddff","#ccccdd","#f3f3f3","#f0ffff")
+// Thiết lập font chữ để tạo ra tuyết, vì các font chữ khác nhau thì hình dạng dấu * cũng khác nhau
+var snowtype=new Array("Times","Arial","Times","Verdana")
+// Thiết lập ký tự tạo ra tuyết (Khuyến khích: *)
+var snowletter="*"
+// Thiết lập tốc độ rơi xuống (Đề nghị trong khoảng 0.3-2)
+var sinkspeed=0.3
+// Kích thước tối đa của bông tuyết
+var snowmaxsize=50
+// Kích thước tối thiểu của bông tuyết
+var snowminsize=1
+// Thiết lập vùng tuyết rơi
+// 1 cho toàn bộ trang web, 2 cho phần bên trái
+// 3 cho phần trung tâm, 4 cho phần bên phải
+var snowingzone=1
+// Không được chỉnh code ở bên dưới
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)
+var browserok=ie5||ns6||opera
+function randommaker(range) {
+        rand=Math.floor(range*Math.random())
+    return rand
+}
+function initsnow() {
+        if (ie5 || opera) {
+                marginbottom = document.body.scrollHeight
+                marginright = document.body.clientWidth-15
+        }
+        else if (ns6) {
+                marginbottom = document.body.scrollHeight
+                marginright = window.innerWidth-15
+        }
+        var snowsizerange=snowmaxsize-snowminsize
+        for (i=0;i<=snowmax;i++) {
+                crds[i] = 0;
+            lftrght[i] = Math.random()*15;
+            x_mv[i] = 0.03 + Math.random()/10;
+                snow[i]=document.getElementById("s"+i)
+                snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+                snow[i].size=randommaker(snowsizerange)+snowminsize
+                snow[i].style.fontSize=snow[i].size+'px';
+                snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+                snow[i].style.zIndex=1000
+                snow[i].sink=sinkspeed*snow[i].size/5
+                if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+                if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+                if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+                if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+                snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+                snow[i].style.left=snow[i].posx+'px';
+                snow[i].style.top=snow[i].posy+'px';
+        }
+        movesnow()
+}
+function movesnow() {
+        for (i=0;i<=snowmax;i++) {
+                crds[i] += x_mv[i];
+                snow[i].posy+=snow[i].sink
+                snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+                snow[i].style.top=snow[i].posy+'px';
+                if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+                        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+                        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+                        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+                        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+                        snow[i].posy=0
+                }
+        }
+        var timer=setTimeout("movesnow()",50)
+}
+for (i=0;i<=snowmax;i++) {
+        document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+        window.onload=initsnow
+}
+//]]>
+</script>
+    <!--<body>
+</body>-->
+	</body>
